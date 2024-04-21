@@ -10,7 +10,9 @@ public class Main {
             System.out.println("Bem-vindo ao jogo Monty Hall");
             System.out.print("Escolha uma porta (1, 2 ou 3): ");
             portaEscolhida = scn.nextInt();
+            scn.nextLine();
 
+            if(portaEscolhida >= 1 && portaEscolhida <=3 ) {
                 portaPremiada = random.nextInt(3) + 1;
 
                 for(int i = 1; i <= 3; i++){  //portaVazia tem que ser diferente da portaPremiada e da portaEscolhida
@@ -21,12 +23,12 @@ public class Main {
 
                 System.out.println("O apresentador abriu a porta " + portaVazia + " que está vazia.");
                 System.out.println("Você deseja trocar para a outra porta? (s/n)");
-                scn.nextLine();
-                String escolha2 = scn.nextLine();
-                if (escolha2 == "S" || escolha2 == "s"){
+                String escolha2 = scn.nextLine().toLowerCase();
+
+                if (escolha2.equals("s")){
                     for(int j = 1; j <= 3; j++) {
-                        if(portaVazia != j && portaEscolhida != j) {
-                            portaEscolhida = j;
+                        if(portaVazia != j && portaEscolhida != j) { //novo valor p portaEscolhida precisa ser diferente
+                            portaEscolhida = j;  // da portaVazia e não ser a portaEscolhida que o usuario digitou antes
                         }
                     }
                     if(portaEscolhida == portaPremiada) {
@@ -41,5 +43,8 @@ public class Main {
                         System.out.println("Você perdeu! A porta premiada era a " + portaPremiada);
                     }
                 }
+            } else {
+                System.out.println("Digite um número entre 1 e 3!");
+            }
     }
 }
