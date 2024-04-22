@@ -3,6 +3,7 @@ Jogo de simulação do famoso problema de probabilidade conhecido como "Paradoxo
 
 ## Visualização GUI:
 
+https://github.com/beatrizac03/montyhall-game/assets/134962161/1848bd42-02be-478e-98c6-5ef54c2ec0a8
 
 
 ## Como funciona?
